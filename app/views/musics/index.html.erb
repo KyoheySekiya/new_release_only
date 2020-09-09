@@ -1,0 +1,16 @@
+<div class="music library">
+  <% @musics.each do |music| %>
+    <div class='music-info'>
+      <h3 class='music-title'>
+        <%= music.title %>
+      </h3>
+      <div class='music-artist'>
+        <span><%= music.artist %></span>
+        <div class='like-btn'>
+          <%= image_tag "like.png", class:"like-icon" %>
+          <span class='like-count'>0</span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
