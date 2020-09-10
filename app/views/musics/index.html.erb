@@ -1,16 +1,48 @@
-<div class="music library">
-  <% @musics.each do |music| %>
-    <div class='music-info'>
-      <h3 class='music-title'>
-        <%= music.title %>
-      </h3>
-      <div class='music-artist'>
-        <span><%= music.artist %></span>
-        <div class='like-btn'>
-          <%= image_tag "like.png", class:"like-icon" %>
-          <span class='like-count'>0</span>
-        </div>
-      </div>
+<%= render "shared/header" %>
+<div class='main'>
+  <%# <%= image_tag("new_release_only-logo.JPG", class:"main-background-image")%>
+  <div class='main-contents'>
+    <div class='music-index-text'>PickUp</div>
+    <div class='musics-info-slide'>
+      <a href="https://ja.bloggif.com/" title="フォトモンタージュ"><img src="https://data.bloggif.com/distant/user/store/1/9/7/b/1f49dbb851d647f62280999d0150b791.gif" alt="モンタージュBloggifを作成しました" width="1000" height="400" /></a>
+    </div>
+    <div class='music-index-text'>MusicLibrary</div>
+    <div class="music-library">
+      <% @musics.each do |music| %>
+        <%= link_to "#", method: :get do %>
+          <div class='music-info'>
+            <%= image_tag "sample.jpg", class:"music-image" %>
+            <h3 class='music-title'>
+              <%= music.title %>
+            </h3>
+            <div class='music-artist'>
+              <span><%= music.artist %></span>
+              <div class='like-btn'>
+                <%= image_tag "like.png", class:"like-icon" %>
+                <span class='like-count'>0</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="twitter">
+    <div class='music-index-text'>Twitter</div>
+    <a class="twitter-timeline" href="https://twitter.com/release_only?ref_src=twsrc%5Etfw">Tweets by release_only</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
+<div class='post-btn'>
+  <div class='post-btn-text'>Please Share Your Music Now!!</div>
+
+  <%= link_to "#" do %>
+    <div class="logo-btn">
+      <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+      <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+      <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+      <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+      <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
     </div>
   <% end %>
+  <div class='post-btn-text'>← Click Here!!</div>
 </div>
