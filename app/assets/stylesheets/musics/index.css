@@ -1,0 +1,18 @@
+.main {
+  background-image: url("assets/images/main-background-image.jpeg");
+  background-color: blue;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+
+.music-library{
+  width: calc(100% - 400px);
+  margin: 20px;
+}
+
+.tweet-timeline{
+  width: 400px;
+  background-color: cornflowerblue;
+  margin: 20px;
+}

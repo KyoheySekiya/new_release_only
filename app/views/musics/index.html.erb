@@ -1,16 +1,23 @@
-<div class="music library">
-  <% @musics.each do |music| %>
-    <div class='music-info'>
-      <h3 class='music-title'>
-        <%= music.title %>
-      </h3>
-      <div class='music-artist'>
-        <span><%= music.artist %></span>
-        <div class='like-btn'>
-          <%= image_tag "like.png", class:"like-icon" %>
-          <span class='like-count'>0</span>
+<%= render "shared/header" %>
+<div class='main'>
+
+  <div class="music-library">
+    <% @musics.each do |music| %>
+      <div class='music-info'>
+        <h3 class='music-title'>
+          <%= music.title %>
+        </h3>
+        <div class='music-artist'>
+          <span><%= music.artist %></span>
+          <div class='like-btn'>
+            <%= image_tag "like.png", class:"like-icon" %>
+            <span class='like-count'>0</span>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="tweet-timeline">
+    <a class="twitter-timeline" href="https://twitter.com/release_only?ref_src=twsrc%5Etfw">Tweets by release_only</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
 </div>

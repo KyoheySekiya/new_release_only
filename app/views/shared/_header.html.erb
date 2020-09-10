@@ -1,0 +1,36 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class = left-header>
+    <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
+    <div>new release only!</div>
+    <div class='right-header'>
+      <%# <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
+      <%# <div>new release only!</div> %>
+      <form class="search-form" action="#">
+        <input class='input-box' placeholder='music libraryから探す'>
+        <button class="search-button">
+          <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class='nav'>
+    <div class = 'lists-left'>
+    </div>
+    <div class = 'lists-right'>
+      <%# <% if user_signed_in? %>
+          <%# <ul class='user_info'> %>
+            <%# <li> %>
+              <%# <%= link_to "ユーザー名", "#", class: "user-nickname" %>
+              <%# <%= link_to 'ログアウト', "#", method: :delete, class: "logout" %>
+            <%# </li> %>
+          <%# </ul> %>
+      <%# <% else %>
+        <div>
+          <%= link_to 'ログイン', "#", class: "login" %>
+          <%= link_to '新規登録', "#", class: "sign-up" %>
+        </div>
+      <%# <% end %>
+    </div>
+  </div>
+</header>
