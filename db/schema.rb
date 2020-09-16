@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 2020_09_17_183515) do
   create_table "musics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "artist", null: false
-    t.integer "genre", null: false
-    t.integer "type", null: false
-    t.integer "year", null: false
-    t.integer "month"
+    t.integer "genre_id", null: false
+    t.integer "type_id", null: false
+    t.string "year", null: false
+    t.integer "month_id"
     t.string "text"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

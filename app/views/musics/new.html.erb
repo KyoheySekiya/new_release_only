@@ -18,7 +18,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, multiple: true %>
+        <%= f.file_field :image %>
       </div>
     </div>
     <%# /出品画像 %>
@@ -28,13 +28,13 @@
         CDタイトル名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"musics-text", id:"music-name", placeholder:"CDタイトル名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :title, class:"musics-text", id:"music-title", placeholder:"CDタイトル名（必須 40文字まで)", maxlength:"40" %>
       <div class="musics-explain">
         <div class="weight-bold-text">
           アーティスト名
           <span class="indispensable">必須</span>
         </div>
-      <%= f.text_area :name, class:"musics-text", id:"music-name", placeholder:"アーティスト名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :artist, class:"musics-text", id:"music-artist", placeholder:"アーティスト名（必須 40文字まで)", maxlength:"40" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
@@ -45,27 +45,27 @@
         ジャンル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:category_id, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"music-genre"}) %>
       <div class="weight-bold-text">
         シングル or アルバム
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:condition_id, [], :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"music-type"}) %>
       <div class="weight-bold-text">
         年
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:category_id, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= f.text_field :year, class:"musics-year", id:"music-year", placeholder:"半角数字のみ", maxlength:"16" %>
       <div class="weight-bold-text">
         月
-        <span class="indispensable">必須</span>
+        <span class="indispensable">任意</span>
       </div>
-      <%= f.collection_select(:condition_id, [], :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"select-box", id:"music-month"}) %>
       <div class="weight-bold-text">
         CDの説明
-        <span class="indispensable">必須</span>
+        <span class="indispensable">任意</span>
       </div>
-      <%= f.text_area :text, class:"musics-text", id:"music-info", placeholder:"CDの説明（必須 1,000文字まで）     おすすめの曲名 /感想 /その他アピールポイント" ,rows:"7" ,maxlength:"1000" %>
+      <%= f.text_area :text, class:"musics-text", id:"music-text", placeholder:"CDの説明（必須 1,000文字まで）     おすすめの曲名 /感想 /その他アピールポイント" ,rows:"7" ,maxlength:"1000" %>
     </div>
     <%# /商品の詳細 %>
     <%# 下部ボタン %>

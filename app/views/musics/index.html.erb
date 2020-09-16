@@ -13,7 +13,7 @@
           <%= link_to "#", method: :get do %>
             <div class='music-info'>
               <%# <%= image_tag "sample.jpg", class:"music-image" %>
-              <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if message.image.attached? %>
+              <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
               <div class='music-info-bottom'>
                 <div class='title-artist'>
                   <div class='music-title'>
