@@ -32,19 +32,19 @@
       </form>
       <div class = 'user_info'>
         <div></div>
-        <%# <% if user_signed_in? %>
-            <%# <ul class='user_info'> %>
-              <%# <li> %>
-                <%# <%= link_to "ユーザー名", "#", class: "user-nickname" %>
-                <%# <%= link_to 'ログアウト', "#", method: :delete, class: "logout" %>
-              <%# </li> %>
-            <%# </ul> %>
-        <%# <% else %>
-        <div>
-          <%= link_to 'ログイン', "#", class: "login" %>
-          <%= link_to '新規ユーザー登録', "#", class: "sign-up" %>
-        </div>
-        <%# <% end %>
+        <% if user_signed_in? %>
+          <ul class='user_info'>
+            <li>
+              <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+            </li>
+          </ul>
+        <% else %>
+          <div>
+            <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%= link_to '新規ユーザー登録', new_user_registration_path, class: "sign-up" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
