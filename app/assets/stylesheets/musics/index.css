@@ -1,8 +1,16 @@
-.main {
+.music-index-html{
+  display: flex;
+  justify-content: center;
   background-color: #6c272d;
   width: 100vw;
   height: 100%;
+}
+
+.main {
+  width: 100vw;
+  height: 100%;
   display: flex;
+  padding-bottom: 100px;
 }
 
 /* .main-background-image{
@@ -11,8 +19,9 @@
 } */
 
 .main-contents{
-  width: calc(100% - 400px);
-  margin: 20px;
+  /* width: calc(100vw - 400px); */
+  width: 70%;
+  padding: 20px;
 }
 
 .musics-info-slide{
@@ -35,10 +44,10 @@
 .music-info{
   color: whitesmoke;
   font-size: 20px;
-  /* flex-wrap: wrap; */
-  width: 400px;
-  height: 400px;
-  margin: 20px;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 500px;
+  padding: 20px 0 0 20px;
 }
 
 .music-image{
@@ -46,24 +55,50 @@
   height: 300px;
 }
 
+.music-info-bottom{
+  display: flex;
+  width: 300px;
+}
+
+.title-artist{
+  width: calc(100% - 60px);
+}
+
+.music-artist{
+  border-top: 1px solid whitesmoke;
+}
+
+.like-btn{
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+}
+
+.like-icon{
+  width: 30px;
+  height: 30px;
+}
+
 .twitter{
-  width: 400px;
+  height: 900px;
+  /* width: 400px; */
+  width: 30%;
   background-color: #1f2f54;
   padding: 15px;
-  margin: 15px
+  margin: 15px;
 }
 
 .twitter-timeline{
 }
 
 .post-btn {
-  width: 98vw;
+  width: 90vw;
   height: 100px;
   background: #1f2f54;
   /* text-align: center; */
-  border-radius: 4%;
-  bottom: 32px;
-  /* right: 32px; */
+  border-radius: 30%;
+  bottom: 0px;
+  /* left: 15px; */
   position: fixed;
   /* padding: 15px; */
   border: 1px solid whitesmoke;
@@ -86,7 +121,6 @@
 .post-btn-icon {
   width: 100px;
   height: 100px;
-  margin-top: 5px;
 }
 
 /* .post-btn {

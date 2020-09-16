@@ -9,7 +9,7 @@
 
 .header-background-image{
   width: 100%;
-  height: 20vh;
+  height: 50%;
   justify-content: center;
 }
 
@@ -19,12 +19,13 @@
   align-items: center;
   padding-top: 15px;
   background-color: #1f2f54;
+  height: 50%;
 }
 
 .left-header{
   display: flex;
   align-items: center;
-  width: calc(100% - 400px);
+  width: calc(100% - 40%);
   margin: 35px;
 }
 
@@ -42,27 +43,26 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 400px;
+  width: 40%;
   /* background-color: cornflowerblue; */
   margin: 20px;
   flex-direction: column;
 }
 
 .search-form {
-  width: 700px;
+  width: 100%;
   height: 5vh;
   display: flex;
   margin-bottom: 5px;
 }
 
-.search-form>.input-box {
-  width: 100%;
-  height: 5vh;
+.input-box {
+  width: 90%;
   padding-left: 10px;
 }
 
 .search-button {
-  width: 5vh;
+  width: 10%;
   border: 0;
   cursor: pointer;
   padding: 8px;
@@ -70,6 +70,7 @@
 
 .search-icon {
   width: 100%;
+  height: 100%;
 }
 
 /* .bottom-contents {
@@ -87,11 +88,12 @@
   justify-content: space-between;
   align-items: flex-end;
   font-size: 20px;
+  margin-right: 10px;
 }
 
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
+  margin-right: 10px;
   color: whitesmoke;
   font-weight: bold;
 }
@@ -104,8 +106,7 @@
 
 .login {
   text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
+  margin-right: 10px;
   color: whitesmoke;
 }
 

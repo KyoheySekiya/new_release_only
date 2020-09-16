@@ -17,3 +17,143 @@
  * {
   box-sizing: border-box;
 }
+
+@media (max-width: 1024px) {
+  .top-page-header {
+    height: 35vh;
+  }
+  
+  .new_release_only-logo {
+    width: 50px;
+  }
+
+  .new_release_only {
+    font-size: 30px;
+  }
+
+  .search-form {
+    font-size: 15px;
+  }
+
+  .user_info {
+    font-size: 15px;
+  }
+
+  .music-index-text{
+    font-size: 20px;
+  }
+
+  .music-library{
+  }
+
+  .music-info{
+    font-size: 15px;
+    /* width: 300px; */
+  }
+
+  .post-btn {
+    height: 50px;
+  }
+
+  .post-btn-text {
+    font-size: 15px;
+  }
+
+  .post-btn-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+  @media (max-width: 599px) {
+    .top-page-header {
+      height: 32vh;
+    }
+
+    .left-header{
+      margin: 10px;
+    }
+    
+    .new_release_only-logo {
+      width: 30px;
+    }
+  
+    .new_release_only {
+      padding: 0px 10px;
+      font-size: 20px;
+    }
+  
+    .right-header {
+      padding: 10px;
+    }
+
+    .search-form {
+      font-size: 10px;
+      height: 25px;
+    }
+    
+    .user_info {
+      font-size: 10px;
+    }
+  
+    .main {
+      width: 100vw;
+    }
+  
+    .main-contents{
+      width: 65%;
+      padding: 10px;
+    }
+  
+    .music-index-text{
+      font-size: 15px;
+    }
+    
+    .music-info{
+      font-size: 12px;
+      width: 200px;
+      height: 350px;
+      padding-top: 10px;
+    }
+  
+    .music-image{
+      width: 200px;
+      height: 200px;
+    }
+
+    .music-info-bottom{
+      width: 200px;
+    }
+
+    .like-icon{
+      width: 20px;
+      height: 20px;
+    }
+
+    .twitter{
+      width: 35%;
+      margin-right: 10px;
+      padding-right: 50px;
+    }
+  
+    .twitter-timeline{
+      /* margin-right: 20px; */
+    }
+
+    /* .twitter #twitter-widget-0 {
+      width:100% !important;
+    } */
+
+    .post-btn {
+      height: 30px;
+    }
+  
+    .post-btn-text {
+      font-size: 10px;
+    }
+  
+    .post-btn-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
