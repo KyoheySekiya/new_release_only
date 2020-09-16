@@ -40,14 +40,26 @@
   <div class='post-btn'>
     <div class='post-btn-text'>Please Share Your Music Now!!</div>
 
-    <%= link_to "#" do %>
-      <div class="logo-btn">
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-      </div>
+    <% if user_signed_in? %>
+      <%= link_to new_music_path do %>
+        <div class="logo-btn">
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <div class="logo-btn">
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+        </div>
+      <% end %>
     <% end %>
     <div class='post-btn-text'>← Click Here!!</div>
   </div>

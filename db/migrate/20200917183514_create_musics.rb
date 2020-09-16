@@ -8,6 +8,7 @@ class CreateMusics < ActiveRecord::Migration[6.0]
       t.date :year,              null: false
       t.date :month
       t.string :text
+      t.references :user,            null: false,  foreign_key: true
       t.timestamps
     end
   end
