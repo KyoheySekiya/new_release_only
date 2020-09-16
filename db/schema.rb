@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2020_09_17_183514) do
     t.string "artist", null: false
     t.integer "genre", null: false
     t.integer "type", null: false
-    t.date "year", null: false
-    t.date "month"
+    t.integer "year", null: false
+    t.integer "month"
     t.string "text"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
