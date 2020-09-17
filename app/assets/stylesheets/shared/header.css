@@ -27,6 +27,7 @@
   align-items: center;
   width: calc(100% - 40%);
   margin: 35px;
+  text-decoration: none;
 }
 
 .new_release_only-logo {
@@ -37,6 +38,7 @@
   padding: 0px 30px;
   color:whitesmoke;
   font-size: 50px;
+  text-decoration: none;
 }
 
 .right-header {

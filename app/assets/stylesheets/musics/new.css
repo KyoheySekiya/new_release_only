@@ -1,5 +1,8 @@
 /* border-bottom: 1px solid #eee; */
-
+.top_page-link{
+  text-decoration: none;
+  display: flex;
+}
 
 .musics-registration-contents {
   background-color: #6c272d;
