@@ -2,7 +2,7 @@
 
 
 .musics-registration-contents {
-  background-color: #f5f5f5;
+  background-color: #6c272d;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;
@@ -17,7 +17,7 @@
 }
 
 .musics-registration-main {
-  background-color: #FFF;
+  background-color: whitesmoke;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
@@ -202,7 +202,7 @@
 /* /下部ボタン */
 
 .items-sell-footer {
-  background-color: #f5f5f5;
+  background-color: #6c272d;
   width: 60vw;
   padding: 3ch 0;
   display: flex;
