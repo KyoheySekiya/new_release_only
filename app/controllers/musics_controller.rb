@@ -22,7 +22,7 @@ class MusicsController < ApplicationController
 
   private
   def music_params
-    params.require(:music).permit(:title, :artist, :genre_id, :type_id, :year, :month_id, :text, :image).merge(user_id: current_user.id)
+    params.require(:music).permit(:title, :artist, :genre_id, :type_id, :year, :month_id, :text, :image, :movie).merge(user_id: current_user.id)
   end
 
   def set_music

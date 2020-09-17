@@ -14,6 +14,9 @@
             <div class='music-info'>
               <%# <%= image_tag "sample.jpg", class:"music-image" %>
               <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
+              <% if music.movie.attached? %>
+                <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300' %>
+              <% end %>
               <div class='music-info-bottom'>
                 <div class='title-artist'>
                   <div class='music-title'>
