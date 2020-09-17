@@ -1,4 +1,53 @@
-<%= render "shared/header" %>
+<header class='top-page-header'>
+  <%= image_tag("new_release_only-header.JPG", class:"header-background-image")%>
+  <div class = 'header-contents'>
+    <div class = 'left-header'>
+      <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
+      <div class='new_release_only'>new release only!</div>
+    </div>
+    <div class='right-header'>
+      <%# <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
+      <%# <div>new release only!</div> %>
+      <form class="search-form" action="#">
+        <%# <%= select_tag "submit_name", options_for_select([[""],["洋楽ROCK"],["洋楽POP"],["洋楽HIPHOP/R&B/REGGAE"],["洋楽dance/electronica/house"],["洋楽その他"],["邦楽ROCK"],["邦楽POP"],["邦楽HIPHOP/R&B/REGGAE"],["邦楽dance/electronica/house"],["邦楽その他"]]) %>
+        <%# <select name="year">
+        <option value=""></option>
+        <option value="1900">1900</option>
+        <option value="1901">1901</option>
+        <option value="1902">1902</option>
+        <option value="1903">1903</option>
+        <option value="1904">1904</option>
+        <option value="1905">1905</option>
+        <option value="1906">1906</option>
+        <option value="1907">1907</option>
+        <option value="1908">1908</option>
+        <option value="1909">1909</option>
+        <option value="1910">1910</option>
+        </select> %>
+        <input class='input-box' placeholder='MusicLibraryから探す'>
+        <button class="search-button">
+          <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+      </form>
+      <div class = 'user_info'>
+        <div></div>
+        <% if user_signed_in? %>
+          <ul class='user_info'>
+            <li>
+              <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+            </li>
+          </ul>
+        <% else %>
+          <div>
+            <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%= link_to '新規ユーザー登録', new_user_registration_path, class: "sign-up" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
 <div class='music-index-html'>
   <div class='main'>
     <%# <%= image_tag("new_release_only-logo.JPG", class:"main-background-image")%>
@@ -10,10 +59,8 @@
       <div class='music-index-text'>MusicLibrary</div>
       <div class="music-library">
         <% @musics.each do |music| %>
-          <%= link_to "#", method: :get do %>
+          <%= link_to music_path(music.id), class:"page-link" do %>
             <div class='music-info'>
-              <%# <div class="music-image"> %>
-                <%# <%= image_tag "sample.jpg", class:"music-image" %>
                 <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
                 <% if music.movie.attached? %>
                   <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300', class:"music-image"%>
@@ -24,7 +71,6 @@
                 </div>
                 <% else %>
                 <% end %>
-              <%# </div> %>
               <div class='music-info-bottom'>
                 <div class='title-artist'>
                   <div class='music-title'>

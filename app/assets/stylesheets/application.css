@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+.page-link{
+  text-decoration: none;
+  display: flex;
+}
+
 @media (max-width: 1024px) {
   .top-page-header {
     height: 35vh;

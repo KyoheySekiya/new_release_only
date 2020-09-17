@@ -1,15 +1,4 @@
-<header class='top-page-header'>
-  <%= image_tag("new_release_only-header.JPG", class:"header-background-image")%>
-  <div class = 'header-contents'>
-    <div class = 'left-header'>
-    <%= link_to root_path, class:"top_page-link" do %>
-      <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
-      <div class='new_release_only'>new release only!</div>
-    <% end %>
-    </div>
-    <div class='right-header'></div>
-  </div>
-</header>
+<%= render "shared/header" %>
 
 <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%# <%= render 'shared/error_messages', model: f.object %>

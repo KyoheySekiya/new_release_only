@@ -1,5 +1,5 @@
 class MusicsController < ApplicationController
-  before_action :set_music, only: [:edit, :show]
+  before_action :set_music, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index]
 
 
@@ -21,6 +21,17 @@ class MusicsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def show
+  end
+
+  def destroy
+    if @music.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 
