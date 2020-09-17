@@ -17,7 +17,7 @@
               <% if music.movie.attached? %>
                 <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300' %>
               <% end %>
-              <div class='music-info-bottom'>
+              <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              <div class='music-info-bottom'>
                 <div class='title-artist'>
                   <div class='music-title'>
                     <%= music.title %>

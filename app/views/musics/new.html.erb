@@ -30,6 +30,11 @@
         </p>
         <%= f.file_field :movie %>
       </div>
+      <div class="weight-bold-text">
+        YouTube動画URL
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :youtube_url, class:"musics-text", id:"music-youtube_url", placeholder:"YouTube動画URL", maxlength:"100" %>
     </div>
     <%# /出品画像 %>
     <%# 商品名と商品説明 %>

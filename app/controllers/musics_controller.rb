@@ -13,6 +13,10 @@ class MusicsController < ApplicationController
 
   def create
     @music = Music.new(music_params)
+    url = params[:music][:youtube_url]
+    url = url.last(11)
+    @music.youtube_url = url
+    
     if @music.save
       redirect_to root_path
     else
@@ -22,7 +26,7 @@ class MusicsController < ApplicationController
 
   private
   def music_params
-    params.require(:music).permit(:title, :artist, :genre_id, :type_id, :year, :month_id, :text, :image, :movie).merge(user_id: current_user.id)
+    params.require(:music).permit(:youtube_url, :title, :artist, :genre_id, :type_id, :year, :month_id, :text, :image, :movie).merge(user_id: current_user.id)
   end
 
   def set_music

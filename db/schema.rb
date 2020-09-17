@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_17_183515) do
   end
 
   create_table "musics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "youtube_url"
     t.string "title", null: false
     t.string "artist", null: false
     t.integer "genre_id", null: false
