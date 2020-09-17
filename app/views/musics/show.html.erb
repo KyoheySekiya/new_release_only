@@ -1,0 +1,86 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<div class="music_show">
+  <div class="music-box">
+    <div class='music-image_show'>
+      <%= image_tag @music.image.variant(resize:'500x500'), class:"music-image_show" if @music.image.attached? %>
+      <% if @music.movie.attached? %>
+        <%= video_tag rails_blob_path(@music.movie, disposition: "attachment"), controls: true, size: '500x500', class:"music-image_show"%>
+      <% end %>
+      <% if @music.youtube_url.present? %>
+      <div class="youtube_show">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<%= @music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <% else %>
+      <% end %>
+    </div>
+    <div class="music-title_show">
+      <%= @music.title %>
+    </div>
+
+    <div class="music-artist_show">
+      <%= @music.artist %>
+    </div>
+
+    <div class="music-explain-box">
+      <span><%= @music.text %></span>
+    </div>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="music-detail">投稿者</th>
+          <td class="detail-value"><%= @music.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="music-detail">ジャンル</th>
+          <td class="detail-value"><%= @music.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="music-detail">CD種類</th>
+          <td class="detail-value"><%= @music.type.name %></td>
+        </tr>
+        <tr>
+          <th class="music-detail">リリース年</th>
+          <td class="detail-value"><%= @music.year %>年</td>
+        </tr>
+        <tr>
+          <th class="music-detail">リリース月</th>
+          <td class="detail-value"><%= @music.month.name %>月</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "like.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+    </div>
+    <div class="action">
+      <% if user_signed_in? && current_user.id == @music.user_id %>
+        <%= link_to '編集', "#", method: :get, class: "music_edit" %>
+        <div class='or-text'>or</div>
+        <%= link_to '削除', music_path(@music.id), method: :delete, class:'music_destroy' %>
+      <% else %>
+      <% end %>
+    </div>
+  </div>
+  <%# /商品の概要 %>
+
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text", placeholder="感想や質問などコメントしよう！"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "new_release_only-logo.JPG" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+</div>

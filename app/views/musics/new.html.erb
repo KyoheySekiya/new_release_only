@@ -1,15 +1,4 @@
-<header class='top-page-header'>
-  <%= image_tag("new_release_only-header.JPG", class:"header-background-image")%>
-  <div class = 'header-contents'>
-    <div class = 'left-header'>
-      <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
-      <div class='new_release_only'>new release only!</div>
-    </div>
-    <div class='right-header'></div>
-  </div>
-</header>
-
-
+<%= render "shared/header" %>
 
 <div class="musics-registration-contents">
   <header class="musics-registration-header">
@@ -99,7 +88,6 @@
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>

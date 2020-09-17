@@ -41,6 +41,10 @@
   flex-wrap: wrap;
 }
 
+.music_show_page-link{
+  text-decoration: none;
+}
+
 .music-info{
   color: whitesmoke;
   font-size: 20px;
