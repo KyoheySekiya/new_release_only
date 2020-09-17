@@ -7,9 +7,26 @@ class MusicsController < ApplicationController
     @musics = Music.all
   end
 
+  def new
+    @music = Music.new
+  end
+
+  def create
+    @music = Music.new(music_params)
+    url = params[:music][:youtube_url]
+    url = url.last(11)
+    @music.youtube_url = url
+    
+    if @music.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
   def music_params
-    # params.require(:music).permit(:image, :title, :artist)
+    params.require(:music).permit(:youtube_url, :title, :artist, :genre_id, :type_id, :year, :month_id, :text, :image, :movie).merge(user_id: current_user.id)
   end
 
   def set_music

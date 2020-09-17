@@ -121,6 +121,21 @@
       height: 200px;
     }
 
+    .youtube{
+      position:relative;
+      width:200px;
+      height:0;
+      padding-top:100%;
+    }
+
+    .youtube iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+
     .music-info-bottom{
       width: 200px;
     }
@@ -132,18 +147,8 @@
 
     .twitter{
       width: 35%;
-      margin-right: 10px;
-      padding-right: 50px;
     }
   
-    .twitter-timeline{
-      /* margin-right: 20px; */
-    }
-
-    /* .twitter #twitter-widget-0 {
-      width:100% !important;
-    } */
-
     .post-btn {
       height: 30px;
     }

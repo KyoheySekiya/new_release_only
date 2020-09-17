@@ -12,7 +12,19 @@
         <% @musics.each do |music| %>
           <%= link_to "#", method: :get do %>
             <div class='music-info'>
-              <%= image_tag "sample.jpg", class:"music-image" %>
+              <%# <div class="music-image"> %>
+                <%# <%= image_tag "sample.jpg", class:"music-image" %>
+                <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
+                <% if music.movie.attached? %>
+                  <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300', class:"music-image"%>
+                <% end %>
+                <% if music.youtube_url.present? %>
+                <div class="youtube">
+                  <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <% else %>
+                <% end %>
+              <%# </div> %>
               <div class='music-info-bottom'>
                 <div class='title-artist'>
                   <div class='music-title'>
@@ -40,14 +52,26 @@
   <div class='post-btn'>
     <div class='post-btn-text'>Please Share Your Music Now!!</div>
 
-    <%= link_to "#" do %>
-      <div class="logo-btn">
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-        <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
-      </div>
+    <% if user_signed_in? %>
+      <%= link_to new_music_path do %>
+        <div class="logo-btn">
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <div class="logo-btn">
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+          <%= image_tag "new_release_only-logo.JPG" , size: '185x50' ,class: "post-btn-icon" %>
+        </div>
+      <% end %>
     <% end %>
     <div class='post-btn-text'>← Click Here!!</div>
   </div>
