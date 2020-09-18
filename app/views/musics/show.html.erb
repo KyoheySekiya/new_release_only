@@ -59,7 +59,7 @@
     </div>
     <div class="action">
       <% if user_signed_in? && current_user.id == @music.user_id %>
-        <%= link_to '編集', "#", method: :get, class: "music_edit" %>
+        <%= link_to '編集', edit_music_path(@music.id), method: :get, class: "music_edit" %>
         <div class='or-text'>or</div>
         <%= link_to '削除', music_path(@music.id), method: :delete, class:'music_destroy' %>
       <% else %>
