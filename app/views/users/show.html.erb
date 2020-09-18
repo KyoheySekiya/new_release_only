@@ -1,0 +1,39 @@
+<header class='top-page-header'>
+  <%= image_tag("new_release_only-header.JPG", class:"header-background-image")%>
+  <div class = 'header-contents'>
+    <div class = 'left-header'>
+    <%= link_to root_path, class:"page-link" do %>
+      <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
+      <div class='new_release_only'>new release only!</div>
+    <% end %>
+    </div>
+    <div class='right-header'>
+      <div class = 'user_info'>
+        <div></div>
+      <% if user_signed_in? && current_user.id ==  @user.id %>
+        <%= link_to '編集', edit_user_path(@user.id), method: :get, class: "user-edit" %>
+        <%= link_to '退会', "#", method: :delete, class:"user-destroy" %>
+      <% else %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="user_show">
+  <div class = 'header-contents-bottom'>
+
+    <div class='user-detail'>
+      <div class='user-name_show'><%= @user.nickname %></div>
+      <div class='user_introduction_show'>自己紹介：<%= @user.introduction %></div>
+    </div>
+    <div class='user_show_action'>
+      <% if user_signed_in? && current_user.id ==  @user.id %>
+        <%= link_to '編集', edit_user_path(@user.id), method: :get, class: "user_show_action" %>
+        <%= link_to '退会', "#", method: :delete, class:"user_show_action" %>
+      <% else %>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-show-text">投稿一覧</div>
+      <%= render "musics/music_library" %>
+</div>

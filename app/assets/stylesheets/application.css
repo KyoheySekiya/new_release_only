@@ -23,6 +23,11 @@
   display: flex;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 @media (max-width: 1024px) {
   .top-page-header {
     height: 35vh;

@@ -34,7 +34,7 @@
         <% if user_signed_in? %>
           <ul class='user_info'>
             <li>
-              <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+              <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %>
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
             </li>
           </ul>
@@ -57,38 +57,7 @@
         <a class='musics-info-slide' href="https://ja.bloggif.com/" title="フォトモンタージュ"><img src="https://data.bloggif.com/distant/user/store/1/9/7/b/1f49dbb851d647f62280999d0150b791.gif" alt="モンタージュBloggifを作成しました" width="100%" height="400" /></a>
       </div>
       <div class='music-index-text'>MusicLibrary</div>
-      <div class="music-library">
-        <% @musics.each do |music| %>
-          <%= link_to music_path(music.id), class:"page-link" do %>
-            <div class='music-info'>
-                <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
-                <% if music.movie.attached? %>
-                  <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300', class:"music-image"%>
-                <% end %>
-                <% if music.youtube_url.present? %>
-                <div class="youtube">
-                  <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <% else %>
-                <% end %>
-              <div class='music-info-bottom'>
-                <div class='title-artist'>
-                  <div class='music-title'>
-                    <%= music.title %>
-                  </div>
-                  <div class='music-artist'>
-                    <%= music.artist %>
-                  </div>
-                </div>
-                <div class='like-btn'>
-                  <%= image_tag "like.png", class:"like-icon" %>
-                  <span class='like-count'>0</span>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+      <%= render "musics/music_library" %>
     </div>
     <div class="twitter">
       <div class='music-index-text'>Twitter</div>

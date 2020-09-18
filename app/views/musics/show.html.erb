@@ -31,7 +31,12 @@
       <tbody>
         <tr>
           <th class="music-detail">投稿者</th>
-          <td class="detail-value"><%= @music.user.nickname %></td>
+          <td class="detail-value">
+          <a href="/users/<%= @music.user.id %>">
+          <%= @music.user.nickname %>
+          </a>   
+          &nbsp;←クリックして<%= @music.user.nickname %>さんのマイページへリンク
+          </td>
         </tr>
         <tr>
           <th class="music-detail">ジャンル</th>
