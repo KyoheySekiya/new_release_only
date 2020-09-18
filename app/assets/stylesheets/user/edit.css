@@ -1,0 +1,30 @@
+.form-wrap_user_show{
+  width: 50%;
+  background-color: whitesmoke;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;}
+.sell-btn-contents {
+  width: 70vh;
+  text-align: center;
+}
+
+.change-btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+  width: 50%;
+}
