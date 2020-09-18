@@ -4,7 +4,8 @@ class MusicsController < ApplicationController
 
 
   def index
-    @musics = Music.all
+    # @musics = Music.all
+    @musics = Music.includes(:user).order("created_at DESC")  
   end
 
   def new
@@ -25,6 +26,7 @@ class MusicsController < ApplicationController
   end
 
   def show
+    @musics = Music.includes(:user).order("created_at DESC")  
   end
 
   def edit

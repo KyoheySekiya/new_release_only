@@ -1,0 +1,32 @@
+  <div class="music-library">
+    <% @musics.each do |music| %>
+      <%= link_to music_path(music.id), class:"page-link" do %>
+        <div class='music-info'>
+            <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
+            <% if music.movie.attached? %>
+              <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300', class:"music-image"%>
+            <% end %>
+            <% if music.youtube_url.present? %>
+            <div class="youtube">
+              <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <% else %>
+            <% end %>
+          <div class='music-info-bottom'>
+            <div class='title-artist'>
+              <div class='music-title'>
+                <%= music.title %>
+              </div>
+              <div class='music-artist'>
+                <%= music.artist %>
+              </div>
+            </div>
+            <div class='like-btn'>
+              <%= image_tag "like.png", class:"like-icon" %>
+              <span class='like-count'>0</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
