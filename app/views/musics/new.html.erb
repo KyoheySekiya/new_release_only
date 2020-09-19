@@ -1,9 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="musics-registration-contents">
-  <header class="musics-registration-header">
-    <%# <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
-  </header>
+
   <div class="musics-registration-main">
     <h2 class="musics-registration-title">musicの情報を入力</h2>
     <%= form_with model: @music, local: true do  |f| %>

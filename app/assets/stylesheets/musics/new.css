@@ -1,24 +1,24 @@
 /* border-bottom: 1px solid #eee; */
 .musics-registration-contents {
   background-color: #6c272d;
+  width: 100vw;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 500px;
 }
 
-.musics-registration-header {
-  padding: 5vh 0;
-  text-align: center;
-}
 
 .musics-registration-main {
   background-color: whitesmoke;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
+  margin-top: 50px;
+  /* display: flex;
+  align-items: center;
+  flex-direction: column; */
 }
 
 .musics-registration-title {
@@ -189,13 +189,6 @@
   margin-bottom: 4vh;
 }
 
-.back-btn {
-  background: #aaa;
-  border: 1px solid #aaa;
-  color: #fff;
-  padding: 15px 35%;
-  text-decoration: none;
-}
 
 /* /下部ボタン */
 
