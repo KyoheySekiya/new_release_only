@@ -29,7 +29,7 @@
     <div class='user_show_action'>
       <% if user_signed_in? && current_user.id ==  @user.id %>
         <%= link_to '編集', edit_user_path(@user.id), method: :get, class: "user_show_action" %>
-        <%= link_to '退会', "#", method: :delete, class:"user_show_action" %>
+        <%= link_to '退会', "#", method: :delete, class:"user_show_action", data: { confirm: '本当に退会しますか？ ※これまでの投稿は全て削除されます。' } %>
       <% else %>
       <% end %>
     </div>
