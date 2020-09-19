@@ -1,23 +1,13 @@
-.user_show{
-  height: 100%;
-  width: 100vw;
-  background-color: #6c272d;
-}
-
-.user-show-text{
-  font-size: 30px;
-  padding: 20px;
-  color:whitesmoke;
-}
-
 .header-contents-bottom{
+  width: 100vw;
+  height: 100px;
   background-color: #1f2f54;;
   display: flex;
   color:whitesmoke;
   border-top: whitesmoke solid 5px ;
   padding: 20px;
   align-items: center;
-justify-content: space-between;
+  justify-content: space-between;
 }
 .user-detail{
   display: flex;
@@ -27,11 +17,11 @@ justify-content: space-between;
 }
 
 .user-name_show{
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .user_introduction_show{
-  font-size: 25px;
+  font-size: 20px;
   padding-left: 50px;
 }
 
@@ -39,3 +29,16 @@ justify-content: space-between;
   color:whitesmoke;
   padding: 20px;
   }
+
+  .user_show{
+    height: 100vh;
+    width: 100vw;
+    background-color: #6c272d;
+  }
+
+  .user-show-text{
+    font-size: 30px;
+    padding: 20px;
+    color:whitesmoke;
+  }
+  

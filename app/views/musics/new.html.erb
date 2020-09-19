@@ -3,93 +3,89 @@
 <div class="musics-registration-contents">
 
   <div class="musics-registration-main">
-    <h2 class="musics-registration-title">musicの情報を入力</h2>
+    <div class="musics-registration-title">musicの情報を入力</div>
     <%= form_with model: @music, local: true do  |f| %>
 
     <%# <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 出品画像 %>
     <div class="img-upload">
-      <div class="weight-bold-text">
-        ジャケット画像
-        <span class="indispensable">必須</span>
+        <div class="weight-bold-text">
+          添付ファイル
+          <span class="indispensable-a">画像・動画・URLいずれか１つ必須</span>
+        </div>
+      <div class='img-new'>
+        <div class="weight-bold-text">
+          画像
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image %>
+        </div>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image %>
+      <div class='img-new'>
+        <div class="weight-bold-text">
+          動画
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :movie %>
+        </div>
       </div>
-      <div class="weight-bold-text">
-        動画
-        <span class="indispensable">必須</span>
+      <div class='img-new'>
+        <div class="weight-bold-text">
+          YouTube動画URL
+        </div>
+        <%= f.text_area :youtube_url, class:"musics-text", id:"music-youtube_url", placeholder:"YouTube動画URLをここに貼ってね", maxlength:"100" %>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :movie %>
-      </div>
-      <div class="weight-bold-text">
-        YouTube動画URL
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :youtube_url, class:"musics-text", id:"music-youtube_url", placeholder:"YouTube動画URL", maxlength:"100" %>
     </div>
-    <%# /出品画像 %>
-    <%# 商品名と商品説明 %>
     <div class="new-musics">
       <div class="weight-bold-text">
         CDタイトル名
-        <span class="indispensable">必須</span>
+        <span class="indispensable-a">必須</span>
       </div>
       <%= f.text_area :title, class:"musics-text", id:"music-title", placeholder:"CDタイトル名（必須 40文字まで)", maxlength:"40" %>
       <div class="musics-explain">
         <div class="weight-bold-text">
           アーティスト名
-          <span class="indispensable">必須</span>
+          <span class="indispensable-a">必須</span>
         </div>
       <%= f.text_area :artist, class:"musics-text", id:"music-artist", placeholder:"アーティスト名（必須 40文字まで)", maxlength:"40" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
-
-    <%# 商品の詳細 %>
     <div class="musics-detail">
       <div class="weight-bold-text">
         ジャンル
-        <span class="indispensable">必須</span>
+        <span class="indispensable-a">必須</span>
       </div>
       <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"music-genre"}) %>
       <div class="weight-bold-text">
         シングル or アルバム
-        <span class="indispensable">必須</span>
+        <span class="indispensable-a">必須</span>
       </div>
       <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"music-type"}) %>
       <div class="weight-bold-text">
         年
-        <span class="indispensable">必須</span>
+        <span class="indispensable-a">必須</span>
       </div>
-      <%= f.text_field :year, class:"musics-year", id:"music-year", placeholder:"半角数字のみ", maxlength:"16" %>
+      <%= f.text_field :year, class:"select-box", id:"music-year", placeholder:"半角数字のみ", maxlength:"16" %>
       <div class="weight-bold-text">
         月
-        <span class="indispensable">任意</span>
+        <span class="indispensable-b">任意</span>
       </div>
       <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"select-box", id:"music-month"}) %>
       <div class="weight-bold-text">
         CDの説明
-        <span class="indispensable">任意</span>
+        <span class="indispensable-b">任意</span>
       </div>
       <%= f.text_area :text, class:"musics-text", id:"music-text", placeholder:"CDの説明（必須 1,000文字まで）     おすすめの曲名 /感想 /その他アピールポイント" ,rows:"7" ,maxlength:"1000" %>
     </div>
-    <%# /商品の詳細 %>
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "登録する" ,class:"sell-btn" %>
-    </div>
-    <%# /下部ボタン %>
+      <%= f.submit "登録する" ,class:"regist-btn" %>
+    <% end %>
   </div>
-  <% end %>
 
   <footer class="items-sell-footer">
     <ul class="menu">
