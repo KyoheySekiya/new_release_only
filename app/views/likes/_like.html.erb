@@ -1,0 +1,10 @@
+<% if current_user.liked_by?(@music.id) %>
+  <%= link_to music_like_path(@music), method: :delete, remote: true, id: @music.id do %>
+    <%= image_tag "like.png", class:"like-icon" %>
+  <% end %>
+<% else %>
+  <%= link_to music_likes_path(@music), method: :post, remote: true, id: @music.id do %>
+    <%= image_tag "like.png", class:"like-icon" %>
+  <% end %>
+<% end %>
+<span class='like-count'><%= @music.likes.count %></span>

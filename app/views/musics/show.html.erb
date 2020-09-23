@@ -56,11 +56,8 @@
         </tr>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "like.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
+    <div class="like-btn">
+      <span>この曲が気に入ったらLIKEボタンを押してね！<span><%= render "likes/like" %>
     </div>
     <div class="action">
       <% if user_signed_in? && current_user.id == @music.user_id %>

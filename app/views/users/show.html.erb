@@ -3,7 +3,7 @@
 <div class = 'header-contents-bottom'>
   <div class='user-detail'>
     <div class='user-name_show'><%= @user.nickname %></div>
-    <div class='user_introduction_show'>自己紹介：<%= @user.introduction %></div>
+    <div class='user_introduction_show'>：<%= @user.introduction %></div>
   </div>
   <div class='user_show_action'>
     <% if user_signed_in? && current_user.id ==  @user.id %>
@@ -15,5 +15,38 @@
 </div>
 <div class="user_show">
   <div class="user-show-text">投稿一覧</div>
-      <%= render "musics/music_library" %>
+    <%= render "musics/music_library" %>
+  <div class="user-show-text">LIKE一覧</div>
+  <div class="music-library">
+    <% current_user.like_musics.each do |music| %>
+      <%= link_to music_path(music.id), class:"page-link" do %>
+        <div class='music-info'>
+          <%= image_tag music.image.variant(resize:'300x300'), class:"music-image" if music.image.attached? %>
+            <% if music.movie.attached? %>
+              <%= video_tag rails_blob_path(music.movie, disposition: "attachment"), controls: true, size: '300x300', class:"music-image"%>
+            <% end %>
+            <% if music.youtube_url.present? %>
+              <div class="youtube">
+                <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            <% else %>
+            <% end %>
+            <div class='music-info-bottom'>
+              <div class='title-artist'>
+                <div class='music-title'>
+                  <%= music.title %>
+                </div>
+                <div class='music-artist'>
+                  <%= music.artist %>
+                </div>
+              </div>
+              <div class='like-btn'>
+                <%= image_tag "like.png", class:"like-icon" %>
+                <span class='like-count'><%= music.likes.count %></span>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
