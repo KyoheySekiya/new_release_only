@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @musics = @user.musics
+    @like = Like.new
   end
 
   def edit

@@ -1,3 +1,12 @@
+.new_user {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #6c272d;
+  display: flex;
+  justify-content: center;
+}
+
 .login-btn {
   width: 50%;
   margin: 0 auto;
@@ -17,4 +26,9 @@
 .login-flash-message {
   text-align: center;
   color: red;
+}
+
+html {
+  background-color: #6c272d;
+
 }
