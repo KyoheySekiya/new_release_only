@@ -9,7 +9,7 @@
         <%= video_tag rails_blob_path(@music.movie, disposition: "attachment"), controls: true, size: '500x500', class:"music-image_show"%>
       <% end %>
       <% if @music.youtube_url.present? %>
-      <div class="youtube_show">
+      <div class="youtube_show" data-no-turbolink>
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<%= @music.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <% else %>
@@ -56,15 +56,15 @@
         </tr>
       </tbody>
     </table>
-    <div class="like-btn">
-      <span>この曲が気に入ったらLIKEボタンを押してね！<span><%= render "likes/like" %>
-    </div>
     <div class="action">
       <% if user_signed_in? && current_user.id == @music.user_id %>
         <%= link_to '編集', edit_music_path(@music.id), method: :get, class: "music_edit" %>
         <div class='or-text'>or</div>
         <%= link_to '削除', music_path(@music.id), method: :delete, class:'music_destroy', data: { confirm: '本当に削除しますか？' } %>
       <% else %>
+        <div class="like-btn_show", id="likes_buttons_<%= @music.id %>">
+          <span>この曲が気に入ったらLIKEボタンを押してね！ ➡︎<span><%= render partial: "likes/like", locals: {music: @music} %>
+        </div>
       <% end %>
     </div>
   </div>

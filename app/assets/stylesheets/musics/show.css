@@ -120,6 +120,10 @@
   text-decoration: none;
 }
 
+.like-btn_show{
+  color: whitesmoke;
+}
+
 .comment-box {
   width: 40vw;
   background-color: whitesmoke;

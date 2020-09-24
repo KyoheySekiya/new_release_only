@@ -48,7 +48,7 @@
 
 .music-info{
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 25px;
   flex-wrap: wrap;
   width: 300px;
   height: 500px;
@@ -77,11 +77,13 @@
   display: flex;
   justify-content: space-between;
   color: whitesmoke;
+  font-size: 20px;
 }
 
 .like-icon{
   width: 30px;
   height: 30px;
+  margin-right: 5px;
 }
 
 .twitter{
