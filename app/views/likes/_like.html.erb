@@ -1,9 +1,9 @@
 <% if current_user.liked_by?(@music.id) %>
-  <%= link_to music_like_path(@music.id), method: :delete, class: 'like-btn-action', remote: true do %>
+  <span>LIKE解除: </span><%= link_to music_like_path(@music.id), method: :delete, class: 'like-btn-action', remote: true do %>
     <%= image_tag "like.png", class:"like-icon" %>
   <% end %>
 <% else %>
-  <%= link_to music_likes_path(@music.id), method: :post, class: 'like-btn-action', remote: true do %>
+  <span>この曲が気に入ったらLIKEボタンを押してね！: </span><%= link_to music_likes_path(@music.id), method: :post, class: 'like-btn-action', remote: true do %>
     <%= image_tag "like.png", class:"like-icon" %>
   <% end %>
 <% end %>

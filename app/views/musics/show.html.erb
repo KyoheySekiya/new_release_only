@@ -63,7 +63,7 @@
         <%= link_to '削除', music_path(@music.id), method: :delete, class:'music_destroy', data: { confirm: '本当に削除しますか？' } %>
       <% else %>
         <div class="like-btn_show", id="likes_buttons_<%= @music.id %>">
-          <span>この曲が気に入ったらLIKEボタンを押してね！ ➡︎<span><%= render partial: "likes/like", locals: {music: @music} %>
+          <%= render partial: "likes/like", locals: {music: @music} %>
         </div>
       <% end %>
     </div>
