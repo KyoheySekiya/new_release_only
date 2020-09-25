@@ -121,7 +121,9 @@
 }
 
 .like-btn_show{
+  width: 100%;
   color: whitesmoke;
+  text-align: right;
 }
 
 .comment-box {
