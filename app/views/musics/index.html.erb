@@ -8,27 +8,11 @@
     <div class='right-header'>
       <%# <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
       <%# <div>new release only!</div> %>
-      <form class="search-form" action="#">
-        <%# <%= select_tag "submit_name", options_for_select([[""],["洋楽ROCK"],["洋楽POP"],["洋楽HIPHOP/R&B/REGGAE"],["洋楽dance/electronica/house"],["洋楽その他"],["邦楽ROCK"],["邦楽POP"],["邦楽HIPHOP/R&B/REGGAE"],["邦楽dance/electronica/house"],["邦楽その他"]]) %>
-        <%# <select name="year">
-        <option value=""></option>
-        <option value="1900">1900</option>
-        <option value="1901">1901</option>
-        <option value="1902">1902</option>
-        <option value="1903">1903</option>
-        <option value="1904">1904</option>
-        <option value="1905">1905</option>
-        <option value="1906">1906</option>
-        <option value="1907">1907</option>
-        <option value="1908">1908</option>
-        <option value="1909">1909</option>
-        <option value="1910">1910</option>
-        </select> %>
-        <input class='input-box' placeholder='MusicLibraryから探す'>
-        <button class="search-button">
-          <%= image_tag "search.png", class:"search-icon" %>
-        </button>
-      </form>
+      <%= form_with(url: search_musics_path, local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank:'ジャンル検索'}, class:"select-box", id:"music-genre" %>
+        <%= f.text_field :keyword, placeholder: "キーワード検索（アーティスト名、曲名、リリース年 etc...）", class: 'input-box' %>
+        <%= f.submit "検索", class: "search-btn" %>
+      <% end %>
       <div class = 'user_info'>
         <div></div>
         <% if user_signed_in? %>

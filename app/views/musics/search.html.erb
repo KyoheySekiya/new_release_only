@@ -1,0 +1,19 @@
+<header class='top-page-header'>
+  <%= image_tag("new_release_only-header.JPG", class:"header-background-image")%>
+  <div class = 'header-contents'>
+    <div class = 'left-header'>
+    <%= link_to root_path, class:"page-link" do %>
+      <%= image_tag("new_release_only-logo.JPG", class:"new_release_only-logo")%>
+      <div class='new_release_only'>new release only!</div>
+    <% end %>
+    </div>
+    <div class='right-header'>
+      <%= form_with(url: search_musics_path, local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: 'ジャンル検索'}, {class:"select-box", id:"music-genre"}) %>
+        <%= f.text_field :keyword, placeholder: "キーワード検索（アーティスト名、曲名、リリース年 etc...）", class: 'input-box' %>
+        <%= f.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
+</header>
+<%= render "musics/music_library" %>

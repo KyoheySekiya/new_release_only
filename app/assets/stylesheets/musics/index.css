@@ -36,56 +36,6 @@
   margin-bottom: 20px;
 }
 
-.music-library{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.music_show_page-link{
-  text-decoration: none;
-}
-
-.music-info{
-  color: whitesmoke;
-  font-size: 25px;
-  flex-wrap: wrap;
-  width: 300px;
-  height: 500px;
-  padding: 20px 0 0 20px;
-}
-
-.music-image{
-  width: 300px;
-  height: 300px;
-}
-
-.music-info-bottom{
-  display: flex;
-  width: 300px;
-}
-
-.title-artist{
-  width: calc(100% - 60px);
-}
-
-.music-artist{
-  border-top: 1px solid whitesmoke;
-}
-
-.like-btn{
-  display: flex;
-  justify-content: space-between;
-  color: whitesmoke;
-  font-size: 20px;
-}
-
-.like-icon{
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
-}
-
 .twitter{
   height: 900px;
   /* width: 400px; */
