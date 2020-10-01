@@ -28,6 +28,8 @@ class MusicsController < ApplicationController
   def show
     @musics = Music.includes(:user).order("created_at DESC")
     @like = Like.new
+    @comment = Comment.new
+    @comments = @music.comments.includes(:user)
   end
 
   def edit

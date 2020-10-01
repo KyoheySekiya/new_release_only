@@ -72,17 +72,20 @@
 
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text", placeholder="感想や質問などコメントしよう！"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "new_release_only-logo.JPG" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+      <%= form_with(model: [@music, @comment], local: true) do |f| %>
+      <%= f.text_area :text, class:"comment-text", placeholder:"感想や質問などコメントしよう！" %>
+      <%= f.submit 'コメントする', class:"comment-submit" %>
+    <% end %>
+    <div class="comment-list">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <div>
+            <span class ="comment-nickname"><%= comment.user.nickname %></span>：
+            <%= comment.text %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

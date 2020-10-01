@@ -2,7 +2,8 @@ class Music < ApplicationRecord
   self.inheritance_column = :_type_disabled
   belongs_to :user
   has_many :users, through: :favorites
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_one_attached :image
   has_one_attached :movie
   
