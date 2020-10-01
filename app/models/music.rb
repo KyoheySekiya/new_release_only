@@ -10,4 +10,5 @@ class Music < ApplicationRecord
   belongs_to_active_hash :genre
   belongs_to_active_hash :type
   belongs_to_active_hash :month
+
 end

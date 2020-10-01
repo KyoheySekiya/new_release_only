@@ -1,6 +1,5 @@
 class MusicsController < ApplicationController
   before_action :set_music, only: [:edit, :show, :update, :destroy]
-  before_action :move_to_index, except: [:index]
 
 
   def index
@@ -50,6 +49,20 @@ class MusicsController < ApplicationController
     end
   end
 
+  def search
+    # @musics = Music.search(params[:keyword])
+    @genres = Music.where('genre_id IN(?)', params[:genre_id])
+
+    sort = params[:sort] || "created_at DESC"
+    @keyword = params[:keyword]
+      @musics = []
+      @musics += Music.where('genre_id IN(?)', params[:genre_id])
+      @keyword.split(/[[:blank:]]+/).each do |keyword|
+        @musics += Music.where('title collate utf8_unicode_ci LIKE(?) OR artist collate utf8_unicode_ci LIKE(?) OR year collate utf8_unicode_ci LIKE(?)', "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
+      end
+      @musics.uniq!
+  end
+
   private
   def music_params
     params.require(:music).permit(:youtube_url, :title, :artist, :genre_id, :type_id, :year, :month_id, :text, :image, :movie).merge(user_id: current_user.id)
@@ -57,11 +70,5 @@ class MusicsController < ApplicationController
 
   def set_music
     @music = Music.find(params[:id])
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
 end

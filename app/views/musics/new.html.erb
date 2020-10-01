@@ -61,12 +61,12 @@
         ジャンル
         <span class="indispensable-a">必須</span>
       </div>
-      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"music-genre"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: 'ジャンル選択'}, {class:"select-box", id:"music-genre"}) %>
       <div class="weight-bold-text">
         シングル or アルバム
         <span class="indispensable-a">必須</span>
       </div>
-      <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"music-type"}) %>
+      <%= f.collection_select(:type_id, Type.all, :id, :name, {include_blank: '選択'}, {class:"select-box", id:"music-type"}) %>
       <div class="weight-bold-text">
         年
         <span class="indispensable-a">必須</span>
@@ -76,7 +76,7 @@
         月
         <span class="indispensable-b">任意</span>
       </div>
-      <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"select-box", id:"music-month"}) %>
+      <%= f.collection_select(:month_id, Month.all, :id, :name, {include_blank: '選択'}, {class:"select-box", id:"music-month"}) %>
       <div class="weight-bold-text">
         CDの説明
         <span class="indispensable-b">任意</span>
