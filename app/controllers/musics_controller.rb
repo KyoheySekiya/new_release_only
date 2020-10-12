@@ -36,6 +36,9 @@ class MusicsController < ApplicationController
   end
 
   def update
+    @musics = Music.includes(:user).order("created_at DESC")
+    @comment = Comment.new
+    @comments = @music.comments.includes(:user)
     if @music.update(music_params)
       render :show
     else
