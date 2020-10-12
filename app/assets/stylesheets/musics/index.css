@@ -1,7 +1,7 @@
 .music-index-html{
   display: flex;
   justify-content: center;
-  background: url(/assets/images/main-background-image.jpeg) no-repeat left top;
+  background: url(/assets/main-background-image.jpeg) no-repeat left top;
   background-size: cover;
   width: 100vw;
   height: 100%;
