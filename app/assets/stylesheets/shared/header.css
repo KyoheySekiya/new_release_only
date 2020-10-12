@@ -9,7 +9,7 @@
 
 .header-background-image{
   width: 100%;
-  height: 50%;
+  height: 45%;
   justify-content: center;
 }
 
@@ -17,9 +17,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 15px;
   background-color: #1f2f54;
-  height: 50%;
+  height: 55%;
 }
 
 .left-header{
@@ -58,13 +57,15 @@
 }
 
 .select-box{
-  width: 20%;
+  width: 25%;
+  height: 4vh;
   font-size: 15px;
-  color: gray;
+  padding-left: 5px;
 }
 
 .input-box {
-  width: 70%;
+  width: 69%;
+  height: 4vh;
   padding-left: 10px;
 }
 
@@ -72,16 +73,10 @@ input::-webkit-input-placeholder {
   color: gray;
 }
 
-.search-button {
-  width: 10%;
-  border: 0;
+.search-btn {
+  width: 6%;
+  height: 4vh;
   cursor: pointer;
-  padding: 8px;
-}
-
-.search-icon {
-  width: 100%;
-  height: 100%;
 }
 
 /* .bottom-contents {
